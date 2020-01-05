@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Links: Codable {
+    
+    let LinkUrl: String
+    let LinkName: String
+    let ImageLink: String?
+    
+}

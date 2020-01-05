@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeMessageVC: UIViewController {
+class WelcomeMessageVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +16,16 @@ class WelcomeMessageVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WelcomeMessageCell", for: indexPath) as! WelcomeMessageCell
+        
+        return cell
+    }
+    
+
 
 }
